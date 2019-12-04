@@ -45,7 +45,7 @@ while True:
 
 	# loop over the face detections and draw them on the frame
 	for (x, y, w, h) in rects:
-		cv2.rectangle(frame, (x, y), (w, h), (0, 255, 0), 2) 
+		cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2) 
 	# show the output frame
 
 	cv2.imshow("Frame", frame)
@@ -57,7 +57,8 @@ while True:
 		p = os.path.sep.join([args["output"], "{}.png".format(
 			str(total).zfill(5))])
 		crop_img = frame[y: y + h, x: x + w]
-		cv2.imwrite(p, crop_img)
+		crop_roi = crop_img[10: 90, 10: 90]
+		cv2.imwrite(p, crop_roi)
 		total += 1
         
 	# if the `q` key was pressed, break from the loop
