@@ -61,7 +61,7 @@ for image in images:
     avg_green = Green_val / pix
     avg_blue = Blue_val / pix
    
-    print(str(count) + "=> "+ '('+ str(avg_red) + ',' + str(avg_green) + ',' + str(avg_blue) + ')')
+    print(str(count) + ": "+ '('+ str(avg_red) + ',' + str(avg_green) + ',' + str(avg_blue) + ')')
     count += 1
     red.append(avg_red)
     green.append(avg_green)
