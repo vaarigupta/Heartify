@@ -57,7 +57,7 @@ while True:
 		p = os.path.sep.join([args["output"], "{}.png".format(
 			str(total).zfill(5))])
 		crop_img = frame[y: y + h, x: x + w]
-		crop_roi = crop_img[10: 90, 10: 90]
+		crop_roi = crop_img[10: 100, 10: 103]
 		cv2.imwrite(p, crop_roi)
 		total += 1
         
